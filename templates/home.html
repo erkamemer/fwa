@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr" class="{{ theme }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <style>
+        body.light {
+            background-color: #f0f0f0;
+            color: black;
+        }
+        body.dark {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hoşgeldin, {{ username }}!</h1>
+    <form method="POST" action="{{ url_for('set_theme') }}">
+        <label for="theme">Tema Seç:</label>
+        <select name="theme" id="theme">
+            <option value="light">Aydınlık</option>
+            <option value="dark">Karanlık</option>
+        </select>
+        <button type="submit">Uygula</button>
+    </form>
+    <a href="{{ url_for('logout') }}">Çıkış Yap</a>
+</body>
+</html>
